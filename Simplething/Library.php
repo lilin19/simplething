@@ -16,7 +16,7 @@ Class Msg{
 	}
 	
 	function printMSG(){
-		echo "<p>",$this->name,"<br>",$this->text,"<p>","<br>";
+		echo "<p>",$this->name,":<br>",$this->text,"<p>","<br>";
 	}
 	
 }
@@ -34,10 +34,12 @@ var $list = array(Msg::class);
 }
 
 Class Stream{
+	
+	
 	function start(){
-$sql = new mysqli('127.0.0.1', 'root', '','mysql');
+$sql = new mysqli('127.0.0.1', 'root', 'K3ymAAGMe47f','phpmyadmin');
 if($sql->connect_errno!==0){
-	echo $sql->connect_errno;
+	echo $sql->connect_error;
 }
 $sql -> query("CREATE TABLE Data (Name STRING, )
 		");
@@ -48,11 +50,11 @@ $sql -> query("CREATE TABLE Data (Name STRING, )
 static function output(){
 $pool = array();	
 $a = new Msg();
-	$sql = new mysqli('127.0.0.1', 'root', '','mysql');
+	$sql = new mysqli('127.0.0.1', 'phpmyadmin','K3ymAAGMe47f','phpmyadmin');
 	if($sql->connect_errno!==0){
-		echo $sql->connect_errno;
+		echo $sql->connect_error;
 	}
-	$result =$sql -> query("select * from Data;");
+	$result =$sql -> query("select * from Data limit 20;");
 	if ($result->num_rows > 0) {
 		while($row = $result->fetch_array()) {
 			$a->name=$row["Name"];
@@ -68,11 +70,11 @@ return  $pool;
 
 static function input(Msg $s){
 	$a = new Msg();
-	$sql = new mysqli('127.0.0.1', 'root', '','mysql');
+	$sql = new mysqli('127.0.0.1', 'phpmyadmin','K3ymAAGMe47f','phpmyadmin');
 	if($sql->connect_errno!==0){
-		echo $sql->connect_errno;
+		echo $sql->connect_error;
 	}
-	$result =$sql -> query("insert into Data values ('$s->name','$s->text','$s->date');");
+	$result =$sql -> query("INSERT INTO `phpmyadmin`.`Data` (`Name`, `Text`, `Date`) VALUES ('$s->name', '$s->text', '$s->date');");
 	$sql->close();
 	
 }
