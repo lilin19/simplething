@@ -54,7 +54,7 @@ $a = new Msg();
 	if($sql->connect_errno!==0){
 		echo $sql->connect_error;
 	}
-	$result =$sql -> query("select * from Data limit 20;");
+	$result =$sql -> query("select * from Data limit 100;");
 	if ($result->num_rows > 0) {
 		while($row = $result->fetch_array()) {
 			$a->name=$row["Name"];
