@@ -2,21 +2,23 @@
 Class Msg{
 	var $name;
 	var $text;
-	var $date;
+	var $datel;
 
 	function import() {
+		
 		$this->text=$_POST['text'];
 		$this->name=$_POST['name'];
+		$this->datel= date("Y-m-d H:i:s");
 	}
 
 
 	/** this function output it self html table when the class is not empty  */
 	function feedbackMSG(){
-		echo $this->name,":",$this->text;
+		echo $this->name,":",$this->text,$this->datel;
 	}
 	
 	function printMSG(){
-		echo "<p>",$this->name,":<br>",$this->text,"<p>","<br>";
+		echo "<p>",$this->name,$this->datel,":<br>",$this->text,"<p>","<br>";
 	}
 	
 }
@@ -54,12 +56,12 @@ $a = new Msg();
 	if($sql->connect_errno!==0){
 		echo $sql->connect_error;
 	}
-	$result =$sql -> query("select * from Data limit 100;");
+	$result =$sql -> query("select * from Data order by Date desc limit 100;");
 	if ($result->num_rows > 0) {
 		while($row = $result->fetch_array()) {
 			$a->name=$row["Name"];
 			$a->text=$row["Text"];
-			$a->date=$row["Date"];
+			$a->datel=$row["Date"];
 
 			array_push($pool, $a);
 			$a=new Msg();
@@ -69,12 +71,12 @@ return  $pool;
 }
 
 static function input(Msg $s){
-	$a = new Msg();
 	$sql = new mysqli('127.0.0.1', 'phpmyadmin','K3ymAAGMe47f','phpmyadmin');
 	if($sql->connect_errno!==0){
 		echo $sql->connect_error;
 	}
-	$result =$sql -> query("INSERT INTO `phpmyadmin`.`Data` (`Name`, `Text`, `Date`) VALUES ('$s->name', '$s->text', '$s->date');");
+	$sql -> query("INSERT INTO `phpmyadmin`.`Data` (`Name`, `Text`, `Date`) VALUES ('$s->name', '$s->text', now());");
+	echo "tried";
 	$sql->close();
 	
 }
