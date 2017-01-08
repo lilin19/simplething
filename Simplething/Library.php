@@ -7,7 +7,7 @@ Class Msg{
 	function import() {
 		
 		$this->text=$_POST['text'];
-		$this->name=$_POST['name'];
+		$this->name=Stream::GetIP();
 		$this->datel= date("Y-m-d H:i:s");
 	}
 
@@ -18,7 +18,7 @@ Class Msg{
 	}
 	
 	function printMSG(){
-		echo "<p>",$this->name,$this->datel,":<br>",$this->text,"<p>","<br>";
+		echo "<p>",$this->name," ",$this->datel,":<br>",$this->text,"<p>","<br>";
 	}
 	
 }
@@ -36,6 +36,21 @@ var $list = array(Msg::class);
 }
 
 Class Stream{
+	function GetIP(){
+		if(!empty($_SERVER["HTTP_CLIENT_IP"])){
+			$cip = $_SERVER["HTTP_CLIENT_IP"];
+		}
+		elseif(!empty($_SERVER["HTTP_X_FORWARDED_FOR"])){
+			$cip = $_SERVER["HTTP_X_FORWARDED_FOR"];
+		}
+		elseif(!empty($_SERVER["REMOTE_ADDR"])){
+			$cip = $_SERVER["REMOTE_ADDR"];
+		}
+		else{
+			$cip = "无法获取！";
+		}
+		return $cip;
+	}
 	
 	
 	function start(){
@@ -76,7 +91,6 @@ static function input(Msg $s){
 		echo $sql->connect_error;
 	}
 	$sql -> query("INSERT INTO `phpmyadmin`.`Data` (`Name`, `Text`, `Date`) VALUES ('$s->name', '$s->text', now());");
-	echo "tried";
 	$sql->close();
 	
 }
