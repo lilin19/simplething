@@ -1,14 +1,14 @@
 <?php
+
 Class Msg{
 	var $name;
 	var $text;
 	var $datel;
 
 	function import() {
-		
 		$this->text=$_POST['text'];
 		$this->name=Stream::GetIP();
-		$this->datel= date("Y-m-d H:i:s");
+		$this->datel= date("Y-m-d H:i:s");
 	}
 
 
@@ -90,7 +90,7 @@ static function input(Msg $s){
 	if($sql->connect_errno!==0){
 		echo $sql->connect_error;
 	}
-	$sql -> query("INSERT INTO `phpmyadmin`.`Data` (`Name`, `Text`, `Date`) VALUES ('$s->name', '$s->text', now());");
+	$sql -> query("INSERT INTO `phpmyadmin`.`Data` (`Name`, `Text`, `Date`) VALUES ('$s->name', '$s->text', '$s->datel');");
 	$sql->close();
 	
 }

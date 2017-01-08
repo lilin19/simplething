@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 <script>
@@ -35,18 +35,25 @@ $(document).ready(function(){
 });
 
 </script>
+<style type="text/css">
+#l{
+color:white;
+font-family:Geogia bold;
+background:black;
+}
+</style>
 </head>
 
 <body>
 <ul class="nav nav-pills">
-  <li role="presentation" ><a href="/">Home</a></li>
-  <li role="presentation" class="active"><a href="/Chat">Chatting</a></li>
+  <li role="presentation" ><a href="/"><h4>Home</h4></a></li>
+  <li role="presentation" class="active"><a href="/Chat"><h4>Chatting</h4></a></li>
+   <li role="presentation"><a href="t.html"><h4>Map Service</h4></a></li>
 </ul>
-<div><a href="/test">test</a></div>
 <div class="panel panel-primary">  
-  <div class="panel-heading">Chatting Pool</div>
-<div class="panel-body">
-  <div class="well well-lg" id="out" style="height:400px; overflow:auto"><br><br></div>
+  <div class="panel-heading">Chatting Pool <span id="l">BETA</span></div>
+<div class="panel-body"><h5>
+  <div class="well well-lg" id="out" style="height:400px; overflow:auto"><br><br></div></h5>
   </div>
 </div>
 <script>
