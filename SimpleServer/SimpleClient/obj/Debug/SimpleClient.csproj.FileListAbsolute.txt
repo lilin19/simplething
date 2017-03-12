@@ -1,0 +1,8 @@
+C:\Users\Thomas\Source\Repos\Simplething\SimpleServer\SimpleClient\bin\Debug\SimpleClient.exe.config
+C:\Users\Thomas\Source\Repos\Simplething\SimpleServer\SimpleClient\bin\Debug\SimpleClient.exe
+C:\Users\Thomas\Source\Repos\Simplething\SimpleServer\SimpleClient\bin\Debug\SimpleClient.pdb
+C:\Users\Thomas\Source\Repos\Simplething\SimpleServer\SimpleClient\obj\Debug\SimpleClient.csprojResolveAssemblyReference.cache
+C:\Users\Thomas\Source\Repos\Simplething\SimpleServer\SimpleClient\obj\Debug\SimpleClient.exe
+C:\Users\Thomas\Source\Repos\Simplething\SimpleServer\SimpleClient\obj\Debug\SimpleClient.pdb
+C:\Users\Thomas\Source\Repos\Simplething\SimpleServer\SimpleClient\bin\Debug\Library.dll
+C:\Users\Thomas\Source\Repos\Simplething\SimpleServer\SimpleClient\bin\Debug\Library.pdb

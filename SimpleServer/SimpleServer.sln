@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.4
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleServer", "SimpleServer\SimpleServer.csproj", "{ADCC5F41-94AB-4494-84DC-935E4DE6692C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleUI", "SimpleUI\SimpleUI.csproj", "{EA790A58-9166-44CE-976D-6991D235A662}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library", "Library\Library.csproj", "{EEEC91F4-E6A9-4FE1-A260-BD597A17EDA8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ADCC5F41-94AB-4494-84DC-935E4DE6692C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADCC5F41-94AB-4494-84DC-935E4DE6692C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADCC5F41-94AB-4494-84DC-935E4DE6692C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADCC5F41-94AB-4494-84DC-935E4DE6692C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA790A58-9166-44CE-976D-6991D235A662}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA790A58-9166-44CE-976D-6991D235A662}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA790A58-9166-44CE-976D-6991D235A662}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA790A58-9166-44CE-976D-6991D235A662}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEEC91F4-E6A9-4FE1-A260-BD597A17EDA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEEC91F4-E6A9-4FE1-A260-BD597A17EDA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEEC91F4-E6A9-4FE1-A260-BD597A17EDA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEEC91F4-E6A9-4FE1-A260-BD597A17EDA8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://lilin19.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = SimpleServer\\SimpleServer.csproj
+		SccProjectName1 = SimpleServer
+		SccLocalPath1 = SimpleServer
+		SccProjectUniqueName2 = SimpleUI\\SimpleUI.csproj
+		SccProjectName2 = SimpleUI
+		SccLocalPath2 = SimpleUI
+		SccProjectUniqueName3 = Library\\Library.csproj
+		SccProjectName3 = Library
+		SccLocalPath3 = Library
+	EndGlobalSection
+EndGlobal
