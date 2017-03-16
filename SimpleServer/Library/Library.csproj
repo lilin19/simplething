@@ -44,8 +44,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AsynchronousClient.cs" />
-    <Compile Include="Msg.cs" />
+    <Compile Include="Client.cs" />
+    <Compile Include="Message.cs" />
+    <Compile Include="Request.cs" />
+    <Compile Include="Serialization.cs" />
     <Compile Include="StateObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

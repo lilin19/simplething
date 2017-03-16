@@ -5,16 +5,51 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SimpleUI"
         mc:Ignorable="d"
-        Title="Simplething" Height="384.192" Width="560">
-    <Grid Margin="0,0,2,1.581">
+        Title="Simplething" Height="380" Width="600" MinWidth="600" MinHeight="380">
+    <Grid Margin="0,0,2,1.847" RenderTransformOrigin="0.499,0.627">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="78*"/>
-            <ColumnDefinition Width="199*"/>
-            <ColumnDefinition Width="274*"/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="Submit" Content="Submit" HorizontalAlignment="Left" Height="21.076" Margin="126.878,294.194,0,0" VerticalAlignment="Top" Width="80.091" Grid.Column="2" BorderBrush="Black" Background="#FF4D4D4D" Foreground="White" Click="Submit_Click"/>
-        <TextBox x:Name="Input" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="20.024" Margin="0,295.246,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="285.666" Background="White" BorderBrush="#FF1A4EE8" Grid.Column="1"/>
-        <TextBox x:Name="Screen" Grid.ColumnSpan="2" Grid.Column="1" HorizontalAlignment="Left" Height="231.316" Margin="0,31.488,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="405.608"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="0*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="0*"/>
+            <RowDefinition Height="11*"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="Submit" Content="Submit" HorizontalAlignment="Left" Height="17.96" Margin="470.446,10,0,0" VerticalAlignment="Top" Width="109.554" BorderBrush="Black" Background="#FF4D4D4D" Foreground="White" Click="Submit_Click" Grid.Row="4" Grid.Column="2"/>
+        <TextBox x:Name="Input" HorizontalAlignment="Left" Height="17.96" Margin="10,10,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="99.542" Background="White" BorderBrush="#FF1A4EE8" Grid.Row="4" Grid.Column="2" MouseEnter="Input_MouseEnter" KeyDown="Input_KeyDown">
+            <TextBox.LayoutTransform>
+                <MatrixTransform Matrix="Identity"/>
+            </TextBox.LayoutTransform>
+        </TextBox>
+        <Viewbox Grid.Column="2" Grid.Row="2" Grid.RowSpan="2" Margin="10,5.163,10,0">
+            <Label x:Name="Screen" Grid.ColumnSpan="2" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" BorderBrush="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" Width="489.474" Height="250" RenderTransform="{DynamicResource Transform1}">
+                <Label.Resources>
+                    <MatrixTransform x:Key="Transform1" Matrix="Identity"/>
+                </Label.Resources>
+                <Label.LayoutTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.LayoutTransform>
+                <Label.Effect>
+                    <DropShadowEffect BlurRadius="1" ShadowDepth="1"/>
+                </Label.Effect>
+            </Label>
+        </Viewbox>
+        <Menu Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="17.982" Margin="0,0.036,0,0" VerticalAlignment="Top" Grid.RowSpan="2">
+            <MenuItem Header="_File">
+                <MenuItem Header="_Open"/>
+                <MenuItem Header="_Close"/>
+                <MenuItem Header="_Save"/>
+            </MenuItem>
+        </Menu>
 
     </Grid>
 </Window>

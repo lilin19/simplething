@@ -1,8 +1,8 @@
 C:\Users\Thomas\Source\Repos\Simplething\SimpleServer\SimpleServer\bin\Debug\SimpleServer.exe.config
 C:\Users\Thomas\Source\Repos\Simplething\SimpleServer\SimpleServer\bin\Debug\SimpleServer.exe
 C:\Users\Thomas\Source\Repos\Simplething\SimpleServer\SimpleServer\bin\Debug\SimpleServer.pdb
+C:\Users\Thomas\Source\Repos\Simplething\SimpleServer\SimpleServer\bin\Debug\Library.dll
+C:\Users\Thomas\Source\Repos\Simplething\SimpleServer\SimpleServer\bin\Debug\Library.pdb
 C:\Users\Thomas\Source\Repos\Simplething\SimpleServer\SimpleServer\obj\Debug\SimpleServer.csprojResolveAssemblyReference.cache
 C:\Users\Thomas\Source\Repos\Simplething\SimpleServer\SimpleServer\obj\Debug\SimpleServer.exe
 C:\Users\Thomas\Source\Repos\Simplething\SimpleServer\SimpleServer\obj\Debug\SimpleServer.pdb
-C:\Users\Thomas\Source\Repos\Simplething\SimpleServer\SimpleServer\bin\Debug\Library.dll
-C:\Users\Thomas\Source\Repos\Simplething\SimpleServer\SimpleServer\bin\Debug\Library.pdb

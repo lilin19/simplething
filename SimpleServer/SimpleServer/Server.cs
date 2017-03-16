@@ -8,14 +8,12 @@ using Library;
 namespace SimpleServer {
     public class AsynchronousServer {
         private static ManualResetEvent allDone = new ManualResetEvent(false);
-        public delegate String Response(String request);
-        public static Response response = (String request) => {
-            Console.WriteLine("Read {0} bytes from socket. \n Data : {1}", request.Length, request);
-            return request;
+        public delegate String Response(Request request);
+        public static Response response = (Request request) => {
+            return request.message.date;
         };
         public static void StartListening() {
             byte[] bytes = new Byte[1024];
-            IPHostEntry ipHostInfo = Dns.GetHostEntry("127.0.0.1");
             IPAddress ipAddress = IPAddress.Loopback;
             IPEndPoint localEndPoint = new IPEndPoint(ipAddress, 11000);
             Socket listener = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
@@ -41,6 +39,7 @@ namespace SimpleServer {
             StateObject state = new StateObject() {
                 workSocket = handler
             };
+            Console.WriteLine("Accept!");
             handler.BeginReceive(state.buffer, 0, StateObject.BufferSize, 0, new AsyncCallback(ReadCallback), state);
         }
         public static void ReadCallback(IAsyncResult ar) {
@@ -49,13 +48,14 @@ namespace SimpleServer {
             Socket handler = state.workSocket;
             int bytesRead = handler.EndReceive(ar);
             if (bytesRead > 0) {
-                state.sb.Append(Encoding.ASCII.GetString(state.buffer, 0, bytesRead));
-                content = state.sb.ToString();
-                if (content.Length > 0) {
-                    Send(handler, response(content));
-                } else {
-                    handler.BeginReceive(state.buffer, 0, StateObject.BufferSize, 0, new AsyncCallback(ReadCallback), state);
-                }
+                
+                //state.sb.Append(Encoding.ASCII.GetString(state.buffer, 0, bytesRead));
+                //if (state.buffer > 0) {
+                    Console.WriteLine("Operate.");
+                    Send(handler, response(new Serialization<Request>().Deserialize(state.buffer)));
+                //} else {
+                //    handler.BeginReceive(state.buffer, 0, StateObject.BufferSize, 0, new AsyncCallback(ReadCallback), state);
+                //}
             }
         }
         private static void Send(Socket handler, String data) {
@@ -74,9 +74,6 @@ namespace SimpleServer {
             }
         }
         public static int Main(String[] args) {
-            response = (String request) => {
-                return request.Length + " bytes received!";
-            };
             StartListening();
             return 0;
         }
